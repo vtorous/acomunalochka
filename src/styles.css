@@ -1,6 +1,10 @@
 body {
     background-color: red;
 }
+h1.pageheader {
+    font-weight: normal;
+    font-size: 1.5em;
+}
 
 #main-container {
     background: #fff;
@@ -8,6 +12,7 @@ body {
 .container{
     box-shadow: 0 3px 15px lightgray;
 }
+
 .container.footer {
     background-color: #eee;
 }
@@ -21,11 +26,20 @@ body {
     height: 25px;
 }
 
-h1.pageheader {
-    font-weight: normal;
-    font-size: 1.5em;
-}
 
 .month-stats .list-group-item {
     padding: 0.45rem 1.25rem;
+}
+
+.unpaid { 
+    background-color: #666;
+
+}
+
+.counter_value {
+    width: 6em;
+}
+
+.prev_next_month {
+    width: 11em;
 }

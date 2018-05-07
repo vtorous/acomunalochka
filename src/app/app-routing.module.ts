@@ -6,10 +6,11 @@ import { PaymentComponent }     from './payment/payment.component';
 import { UsersettingsComponent } from './usersettings/usersettings.component';
  
 const routes: Routes = [
-  { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
-  { path: 'history', component: HistoryComponent },
+  { path: '', redirectTo: '/payment', pathMatch: 'full' },
   { path: 'payment', component: PaymentComponent },
+  { path: 'history', component: HistoryComponent },
   { path: 'settings', component: UsersettingsComponent }
+  
 ];
  
 @NgModule({
