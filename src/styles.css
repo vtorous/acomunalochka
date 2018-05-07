@@ -1,1 +1,31 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+    background-color: red;
+}
+
+#main-container {
+    background: #fff;
+}
+.container{
+    box-shadow: 0 3px 15px lightgray;
+}
+.container.footer {
+    background-color: #eee;
+}
+
+.text-large {
+    font-size: 125%;
+}
+
+.large-checkbox {
+    width: 25px;
+    height: 25px;
+}
+
+h1.pageheader {
+    font-weight: normal;
+    font-size: 1.5em;
+}
+
+.month-stats .list-group-item {
+    padding: 0.45rem 1.25rem;
+}
