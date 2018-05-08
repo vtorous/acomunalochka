@@ -14,7 +14,31 @@
 
 <div class="container bg-white">
     <div class="row">
-        
+      
+
+        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 my-3">
+            <ul class="list-group month-stats">
+                <li class="list-group-item text-large text-white bg-secondary">
+                    <strong>{{getMonthName(payments[0].month)}} </strong>{{payments[0].year}}</li>
+                
+                <li class="list-group-item" *ngFor="let key of getMonthHistory(2018, 1)">
+                    <span class="ml-2">{{key.service}}</span>
+                    <span class="float-right"><strong>{{key.sum}}</strong> uah</span>
+                </li>
+                <li class="list-group-item bg-light">
+                    <span><strong>Total</strong></span>
+                    <span class="float-right text-large"><strong>2571.20</strong> uah</span>
+                </li>
+            </ul>
+        </div>
+
+
+
+
+
+
+
+
         <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 my-3">
             <ul class="list-group month-stats">
                 <li class="list-group-item text-large text-white bg-secondary"><strong>January </strong>2018</li>
@@ -44,6 +68,8 @@
                 </li>
             </ul>
         </div>
+
+
 
         <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 my-3">
             <ul class="list-group month-stats">

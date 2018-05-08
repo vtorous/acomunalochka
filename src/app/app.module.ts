@@ -8,6 +8,7 @@ import { PaymentComponent } from './payment/payment.component';
 import { HistoryComponent } from './history/history.component';
 import { UsersettingsComponent } from './usersettings/usersettings.component';
 
+import { KeysPipe } from '../pipes/keys';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { UsersettingsComponent } from './usersettings/usersettings.component';
     PaymentComponent,
     HistoryComponent,
     UsersettingsComponent,
+    KeysPipe
   ],
   imports: [
     BrowserModule,

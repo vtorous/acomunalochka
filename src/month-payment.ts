@@ -1,13 +1,23 @@
 export class Payment {
+    id: number;
     service: string;
+    year: number;
+    month: number;
     sum: number;
-    ismetter: boolean;
-    bmmv: number;
-    cmmv: number;
+    paid: boolean;
+ }
+
+export class PaymentByCounter extends Payment {
+    counterBeginMonth: number;
+    counterEndMonth: number;
 }
 
 export class MonthPayment {
-    year: number;
-    month: number;
-    payments: Payment[];
+    Electricity: PaymentByCounter;
+    Gas: PaymentByCounter;
+    Water: PaymentByCounter;
+    Rent: Payment;
+    Garbage: Payment;
+    Phone: Payment;
+    Internet: Payment;
 }
