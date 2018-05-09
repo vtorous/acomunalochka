@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PAYMENTS } from '../../month-payment-mockup';
+import { YearsList } from '../app.component';
 
 
 @Component({
@@ -11,18 +12,24 @@ import { PAYMENTS } from '../../month-payment-mockup';
 export class HistoryComponent implements OnInit {
   
   payments = PAYMENTS;
+
+  date: Date = new Date();
+  
+  currentMonth = this.date.getMonth();
+  currentYear = this.date.getFullYear();
+  
+  monthHistory = this.getMonthHistory(this.currentYear, this.currentMonth);
+  totalMonthSum = this.getMonthTotalSum(this.currentYear, this.currentMonth);
+  
+  y:YearsList = new YearsList();
+  // yearList = y.getYearList();
+  console.log(y);
   
 
-  monthNames: string[] = [ "January", "February", "March", "April", "May", "June", 
-    "July", "August", "September", "October", "November", "December" ];
-    
-  getMonthName(n: number) {
-      return this.monthNames[n];
-  } 
 
+  getMonthHistory(year: number, month: number) : { service: string, sum: number }[] {
 
-  getMonthHistory(year: number, month: number) {
-    var history: { service: string, sum: number }[] = [];
+    var monthHistory: { service: string, sum: number }[] = [];
 
     for (let index = 0; index < this.payments.length; index++) {
       const element = this.payments[index];
@@ -32,18 +39,30 @@ export class HistoryComponent implements OnInit {
           service: element.service,
           sum: element.sum,
         }
-        history.push(obj);
+        monthHistory.push(obj);
       }
-
     }
-    console.log(history);
-    return history;
+    return monthHistory;
   }
-  
+
+  getMonthTotalSum (year: number, month: number): number {
+    let sum = 0;
+
+    for (let index = 0; index < this.payments.length; index++) {
+      const element = this.payments[index];
+      
+      if (element.year === year && element.month === month) {
+        sum += element.sum;
+      }
+    }    
+
+    return sum;
+  }
 
   constructor() { }
 
   ngOnInit() {
+    console.log(this.y);
   }
 
 }

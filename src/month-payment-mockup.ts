@@ -25,14 +25,13 @@ export const PAYMENTS: (Payment|PaymentByCounter)[]  = [
     { id: 305, service: 'Phone', year: 2018, month: 3, sum: 125, paid: true},
     { id: 306, service: 'Internet', year: 2018, month: 3, sum: 125, paid: true},
     
-    { id: 400, service: 'Electricity', year: 2018, month: 4, sum: 125, paid: true, counterBeginMonth: 25, counterEndMonth: 35},
-    { id: 401, service: 'Gas', year: 2018, month: 4, sum: 125, paid: true, counterBeginMonth: 25, counterEndMonth: 35},
+    { id: 400, service: 'Electricity', year: 2018, month: 4, sum: 155.25, paid: true, counterBeginMonth: 25, counterEndMonth: 35},
+    { id: 401, service: 'Gas', year: 2018, month: 4, sum: 1256.87, paid: true, counterBeginMonth: 25, counterEndMonth: 35},
     { id: 402, service: 'Water', year: 2018, month: 4, sum: 125, paid: true, counterBeginMonth: 25, counterEndMonth: 35},
     { id: 403, service: 'Rent', year: 2018, month: 4, sum: 125, paid: true},
     { id: 404, service: 'Garbage', year: 2018, month: 4, sum: 125, paid: true},
     { id: 405, service: 'Phone', year: 2018, month: 4, sum: 125, paid: true},
     { id: 406, service: 'Internet', year: 2018, month: 4, sum: 125, paid: true},
-
 
     { id: 400, service: 'Electricity', year: 2018, month: 5, sum: 125, paid: true, counterBeginMonth: 25, counterEndMonth: 35},
     { id: 401, service: 'Gas', year: 2018, month: 5, sum: 125, paid: true, counterBeginMonth: 25, counterEndMonth: 35},
@@ -44,8 +43,8 @@ export const PAYMENTS: (Payment|PaymentByCounter)[]  = [
 
     { id: 400, service: 'Electricity', year: 2018, month: 6, sum: 125, paid: false, counterBeginMonth: undefined, counterEndMonth: undefined},
     { id: 401, service: 'Gas', year: 2018, month: 6, sum: 125, paid: false, counterBeginMonth: undefined, counterEndMonth: undefined},
-    { id: 402, service: 'Water', year: 2018, month: 6, sum: 125, paid: false, counterBeginMonth: undefined, counterEndMonth: undefined},
-    { id: 403, service: 'Rent', year: 2018, month: 6, sum: 125, paid: false},
+    { id: 402, service: 'Water', year: 2018, month: 6, sum: undefined, paid: false, counterBeginMonth: undefined, counterEndMonth: undefined},
+    { id: 403, service: 'Rent', year: 2018, month: 6, sum: undefined, paid: false},
     { id: 404, service: 'Garbage', year: 2018, month: 6, sum: 125, paid: false},
     { id: 405, service: 'Phone', year: 2018, month: 6, sum: 125, paid: false},
     { id: 406, service: 'Internet', year: 2018, month: 6, sum: 125, paid: false},

@@ -10,19 +10,18 @@
         <!-- Navigation -->
         <div class="collapse navbar-collapse" id="navbarText">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item active pl-2">
-                    <a class="nav-link" routerLink="/payment">My payments</a>
+                <li class="nav-item pl-2">
+                    <a class="nav-link" [routerLinkActive]="['active']" routerLink="/payment">My payments</a>
                 </li>
                 <li class="nav-item pl-2">
-                    <a class="nav-link" routerLink="/history">History</a>
+                    <a class="nav-link" [routerLinkActive]="['active']" routerLink="/history">History</a>
                 </li>
                 <li class="nav-item pl-2">
-                    <a class="nav-link" routerLink="/settings">Settings</a>
+                    <a class="nav-link" [routerLinkActive]="['active']" routerLink="/settings">Settings</a>
                 </li>
             </ul>
         </div>
     </nav>
 </div>  
-
 <router-outlet></router-outlet>
 
