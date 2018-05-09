@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { PAYMENTS } from '../../month-payment-mockup';
-import { YearsList } from '../app.component';
 
 
 @Component({
@@ -20,15 +19,8 @@ export class HistoryComponent implements OnInit {
   
   monthHistory = this.getMonthHistory(this.currentYear, this.currentMonth);
   totalMonthSum = this.getMonthTotalSum(this.currentYear, this.currentMonth);
-  
-  y:YearsList = new YearsList();
-  // yearList = y.getYearList();
-  console.log(y);
-  
-
-
+     
   getMonthHistory(year: number, month: number) : { service: string, sum: number }[] {
-
     var monthHistory: { service: string, sum: number }[] = [];
 
     for (let index = 0; index < this.payments.length; index++) {
@@ -41,13 +33,14 @@ export class HistoryComponent implements OnInit {
         }
         monthHistory.push(obj);
       }
+
     }
+
     return monthHistory;
   }
 
   getMonthTotalSum (year: number, month: number): number {
     let sum = 0;
-
     for (let index = 0; index < this.payments.length; index++) {
       const element = this.payments[index];
       
@@ -62,7 +55,7 @@ export class HistoryComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    console.log(this.y);
+    
   }
 
 }

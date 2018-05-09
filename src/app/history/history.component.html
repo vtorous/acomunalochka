@@ -16,16 +16,20 @@
     <div class="row">
 
 
-    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 my-3">
-        <app-month-history-detail
-            [month]="currentMonth"
-            [year]="currentYear"
-            [totalMonthSum] = "totalMonthSum"
-            [monthHistory]="monthHistory">
-        </app-month-history-detail>
-    </div>
+        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 my-3">
+            <app-month-history-detail
+                [month]="currentMonth"
+                [year]="currentYear"
+                [totalMonthSum] = "totalMonthSum"
+                [monthHistory]="monthHistory">
+            </app-month-history-detail>
+        </div>
 
-
+        <div class="row">
+            <div class="col">
+                {{yearsList}}
+            </div>
+        </div>
         <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 my-3">
             <ul class="list-group month-stats">
                 <li class="list-group-item text-large text-white bg-secondary"><strong>January </strong>2018</li>
