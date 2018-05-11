@@ -1,18 +1,27 @@
 import { Component, OnInit } from '@angular/core';
-import { PAYMENTS } from '../../month-payment-mockup';
-import { YearsList } from '../app.component';
+import { AppComponent } from '../app.component';
+
+import { Payment, PaymentByCounter, } from '../../month-payment';
+import { PaymentService } from '../payment.service';
+import { DatesService } from '../dates.service';
 
 
 @Component({
   selector: 'app-history',
   templateUrl: './history.component.html',
-  styleUrls: ['./history.component.css']
+  styleUrls: ['./history.component.css'],
+  providers: [ PaymentService,
+                DatesService],
 })
 
 export class HistoryComponent implements OnInit {
   
-  payments = PAYMENTS;
+  // payments = PAYMENTS;
+  payments: (Payment|PaymentByCounter)[];
+  curencyString: string;
 
+  yearsList: number[];
+  
   date: Date = new Date();
   
   currentMonth = this.date.getMonth();
@@ -20,16 +29,12 @@ export class HistoryComponent implements OnInit {
   
   monthHistory = this.getMonthHistory(this.currentYear, this.currentMonth);
   totalMonthSum = this.getMonthTotalSum(this.currentYear, this.currentMonth);
-  
-  y:YearsList = new YearsList();
-  // yearList = y.getYearList();
-  console.log(y);
-  
 
-
+//----------------------------------------------------------------------------------------------
   getMonthHistory(year: number, month: number) : { service: string, sum: number }[] {
-
+    
     var monthHistory: { service: string, sum: number }[] = [];
+    this.payments = this.paymentService.getPayments();
 
     for (let index = 0; index < this.payments.length; index++) {
       const element = this.payments[index];
@@ -45,9 +50,10 @@ export class HistoryComponent implements OnInit {
     return monthHistory;
   }
 
+  //----------------------------------------------------------------------------------------------
   getMonthTotalSum (year: number, month: number): number {
     let sum = 0;
-
+    
     for (let index = 0; index < this.payments.length; index++) {
       const element = this.payments[index];
       
@@ -55,14 +61,24 @@ export class HistoryComponent implements OnInit {
         sum += element.sum;
       }
     }    
-
+    
     return sum;
   }
 
-  constructor() { }
+  
+  constructor(private paymentService: PaymentService,
+              private datesService: DatesService){
+  }
+    
+  //----------------------------------------------------------------------------------------------
+  getPayments(): void {
+    this.payments = this.paymentService.getPayments();
+  } 
 
   ngOnInit() {
-    console.log(this.y);
+    this.yearsList = this.datesService.getYearsList();
+    this.curencyString = this.paymentService.getCurencyString();  
+    console.log(this.yearsList);
   }
 
 }

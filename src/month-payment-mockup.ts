@@ -1,6 +1,30 @@
 import { Payment, PaymentByCounter, } from './month-payment';
 
 export const PAYMENTS: (Payment|PaymentByCounter)[]  = [
+    { id: 100, service: 'Electricity', year: 2017, month: 10, sum: 25, paid: true, counterBeginMonth: 25, counterEndMonth: 35},
+    { id: 101, service: 'Gas', year: 2017, month: 10, sum: 25, paid: true, counterBeginMonth: 25, counterEndMonth: 35},
+    { id: 102, service: 'Water', year: 2017, month: 10, sum: 25, paid: true, counterBeginMonth: 25, counterEndMonth: 35},
+    { id: 103, service: 'Rent', year: 2017, month: 10, sum: 25, paid: true},
+    { id: 104, service: 'Garbage', year: 2017, month: 10, sum: 25, paid: true},
+    { id: 105, service: 'Phone', year: 2017, month: 10, sum: 25, paid: true},
+    { id: 106, service: 'Internet', year: 2017, month: 10, sum: 25, paid: true},
+
+    { id: 100, service: 'Electricity', year: 2017, month: 11, sum: 25, paid: true, counterBeginMonth: 25, counterEndMonth: 35},
+    { id: 101, service: 'Gas', year: 2017, month: 11, sum: 25, paid: true, counterBeginMonth: 25, counterEndMonth: 35},
+    { id: 102, service: 'Water', year: 2017, month: 11, sum: 25, paid: true, counterBeginMonth: 25, counterEndMonth: 35},
+    { id: 103, service: 'Rent', year: 2017, month: 11, sum: 25, paid: true},
+    { id: 104, service: 'Garbage', year: 2017, month: 11, sum: 25, paid: true},
+    { id: 105, service: 'Phone', year: 2017, month: 11, sum: 25, paid: true},
+    { id: 106, service: 'Internet', year: 2017, month: 11, sum: 25, paid: true},
+
+    { id: 100, service: 'Electricity', year: 2018, month: 0, sum: 25, paid: true, counterBeginMonth: 25, counterEndMonth: 35},
+    { id: 101, service: 'Gas', year: 2018, month: 0, sum: 25, paid: true, counterBeginMonth: 25, counterEndMonth: 35},
+    { id: 102, service: 'Water', year: 2018, month: 0, sum: 25, paid: true, counterBeginMonth: 25, counterEndMonth: 35},
+    { id: 103, service: 'Rent', year: 2018, month: 0, sum: 25, paid: true},
+    { id: 104, service: 'Garbage', year: 2018, month: 0, sum: 25, paid: true},
+    { id: 105, service: 'Phone', year: 2018, month: 0, sum: 25, paid: true},
+    { id: 106, service: 'Internet', year: 2018, month: 0, sum: 25, paid: true},
+    
     { id: 100, service: 'Electricity', year: 2018, month: 1, sum: 25, paid: true, counterBeginMonth: 25, counterEndMonth: 35},
     { id: 101, service: 'Gas', year: 2018, month: 1, sum: 25, paid: true, counterBeginMonth: 25, counterEndMonth: 35},
     { id: 102, service: 'Water', year: 2018, month: 1, sum: 25, paid: true, counterBeginMonth: 25, counterEndMonth: 35},
@@ -8,6 +32,7 @@ export const PAYMENTS: (Payment|PaymentByCounter)[]  = [
     { id: 104, service: 'Garbage', year: 2018, month: 1, sum: 25, paid: true},
     { id: 105, service: 'Phone', year: 2018, month: 1, sum: 25, paid: true},
     { id: 106, service: 'Internet', year: 2018, month: 1, sum: 25, paid: true},
+    
 
     { id: 200, service: 'Electricity', year: 2018, month: 2, sum: 1, paid: true, counterBeginMonth: 25, counterEndMonth: 35},
     { id: 201, service: 'Gas', year: 2018, month: 2, sum: 12, paid: true, counterBeginMonth: 25, counterEndMonth: 35},
@@ -27,11 +52,11 @@ export const PAYMENTS: (Payment|PaymentByCounter)[]  = [
     
     { id: 400, service: 'Electricity', year: 2018, month: 4, sum: 155.25, paid: true, counterBeginMonth: 25, counterEndMonth: 35},
     { id: 401, service: 'Gas', year: 2018, month: 4, sum: 1256.87, paid: true, counterBeginMonth: 25, counterEndMonth: 35},
-    { id: 402, service: 'Water', year: 2018, month: 4, sum: 125, paid: true, counterBeginMonth: 25, counterEndMonth: 35},
-    { id: 403, service: 'Rent', year: 2018, month: 4, sum: 125, paid: true},
-    { id: 404, service: 'Garbage', year: 2018, month: 4, sum: 125, paid: true},
-    { id: 405, service: 'Phone', year: 2018, month: 4, sum: 125, paid: true},
-    { id: 406, service: 'Internet', year: 2018, month: 4, sum: 125, paid: true},
+    { id: 402, service: 'Water', year: 2018, month: 4, sum: 54.25, paid: true, counterBeginMonth: 25, counterEndMonth: 35},
+    { id: 403, service: 'Rent', year: 2018, month: 4, sum: 485.54, paid: true},
+    { id: 404, service: 'Garbage', year: 2018, month: 4, sum: 224.12, paid: true},
+    { id: 405, service: 'Phone', year: 2018, month: 4, sum: 124.24, paid: true},
+    { id: 406, service: 'Internet', year: 2018, month: 4, sum: 135.86, paid: true},
 
     { id: 400, service: 'Electricity', year: 2018, month: 5, sum: 125, paid: true, counterBeginMonth: 25, counterEndMonth: 35},
     { id: 401, service: 'Gas', year: 2018, month: 5, sum: 125, paid: true, counterBeginMonth: 25, counterEndMonth: 35},

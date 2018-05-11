@@ -10,13 +10,14 @@ export class MonthHistoryDetailComponent implements OnInit {
   
   @Input() year: number;
   @Input() month: string;
+  @Input() curencyString: string;
   @Input() totalMonthSum: number;
   @Input() monthHistory: {service: string, sum: number}[];
   
   constructor() { }
 
   ngOnInit() {
-    console.log(this.monthHistory);
+    
   }
 
 }
