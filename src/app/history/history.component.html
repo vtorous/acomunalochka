@@ -2,9 +2,11 @@
     <div class="row">
         <div class="col pt-4 pb-1">
             <h1 class="pageheader d-inline-block">History</h1>
-            <select class="form-control form-control-lg form-control-plaintext d-inline-block w-auto">
+            <select (change)="onChange()"
+                    [(ngModel)]="currentYear"
+                    class="form-control form-control-lg form-control-plaintext d-inline-block w-auto">
                 <option *ngFor="let year of yearsList"
-                    [selected]="year === currentYear">{{year}}</option>
+                    [selected]="year == currentYear">{{year}}</option>
             </select>
         </div>
     </div>
@@ -14,21 +16,24 @@
     <div class="row">
 
 
-        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 my-3">
-            <app-month-history-detail
-                [month]="currentMonth"
+        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 my-3"
+             *ngFor="let month of monthList">
+
+             <app-month-history-detail
+                [month]="month"
                 [year]="currentYear"
                 [totalMonthSum] = "totalMonthSum"
                 [curencyString] = "curencyString"
                 [monthHistory] = "monthHistory">
             </app-month-history-detail>
+
         </div>
 
         <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 my-3">
             <ul class="list-group month-stats">
                 <li class="list-group-item text-large text-white bg-secondary"><strong>January </strong>2018</li>
                 <li class="list-group-item">
-                    <span class="ml-2">Electricity</span>
+                    <span class="ml-2">Electricity {{currentYear}}</span>
                     <span class="float-right"><strong>155</strong> uah</span>
                 </li>
                 <li class="list-group-item">

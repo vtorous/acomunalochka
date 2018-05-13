@@ -10,14 +10,42 @@ export class DatesService {
 
   payments: (Payment|PaymentByCounter)[];
 
-  yearsList:number[] = [2015, 2016, 2017, 2018];
+  yearsList:number[] = [];
+  monthList:number[] = [];
 
- 
+  //------------------------------------------------------------------------
+  // return list of years where exist data about payments
   getYearsList(): number[] {
-    console.log(this.yearsList);
-    return this.yearsList;
+    this.yearsList = [];
+    for (let index = 0; index < this.payments.length; index++) {
+      const element = this.payments[index];
+      
+      if (!this.yearsList.includes(element.year)) {
+        this.yearsList.push(element.year);
+      }
+    }
+    
+    return this.yearsList.sort();
   }
-  
+
+  //------------------------------------------------------------------------
+  // return ordered list of month where exist data about payments
+  getMonthList(year: number): number[] {
+   
+    this.monthList = [];
+    
+    for (let index = 0; index < this.payments.length; index++) {
+      const element = this.payments[index];
+      if ( !this.monthList.includes(element.month) && element.year == year) {
+        this.monthList.push(element.month);
+      }
+    }
+    
+    return this.monthList.sort();
+  }
+
+
+
 
   constructor(private paymentService: PaymentService) {
     this.payments = this.paymentService.getPayments();

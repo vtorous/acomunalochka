@@ -22,10 +22,8 @@
                 <option>June</option>
             </select>
             <select class="form-control form-control-lg form-control-plaintext d-inline-block w-auto">
-                <option>2015</option>
-                <option>2016</option>
-                <option>2017</option>
-                <option selected>2018</option>
+                <option *ngFor="let year of yearsList"
+                    [selected]="year === currentYear">{{year}}</option>
             </select>
         </div>
 
