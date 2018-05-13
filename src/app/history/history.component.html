@@ -3,10 +3,8 @@
         <div class="col pt-4 pb-1">
             <h1 class="pageheader d-inline-block">History</h1>
             <select class="form-control form-control-lg form-control-plaintext d-inline-block w-auto">
-                <option>2015</option>
-                <option>2016</option>
-                <option>2017</option>
-                <option selected>2018</option>
+                <option *ngFor="let year of yearsList"
+                    [selected]="year === currentYear">{{year}}</option>
             </select>
         </div>
     </div>
@@ -21,15 +19,11 @@
                 [month]="currentMonth"
                 [year]="currentYear"
                 [totalMonthSum] = "totalMonthSum"
-                [monthHistory]="monthHistory">
+                [curencyString] = "curencyString"
+                [monthHistory] = "monthHistory">
             </app-month-history-detail>
         </div>
 
-        <div class="row">
-            <div class="col">
-                {{yearsList}}
-            </div>
-        </div>
         <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 my-3">
             <ul class="list-group month-stats">
                 <li class="list-group-item text-large text-white bg-secondary"><strong>January </strong>2018</li>
