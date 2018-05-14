@@ -10,6 +10,7 @@ import { PaymentService } from '../payment.service';
   providers: [ PaymentService,
     DatesService],
 })
+
 export class PaymentComponent implements OnInit {
 
   yearsList: number[];
@@ -17,8 +18,6 @@ export class PaymentComponent implements OnInit {
   date: Date = new Date();
   currentYear = this.date.getFullYear();
   
-
-
   constructor(private datesService: DatesService) { }
 
   ngOnInit() {
